@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <tittle class="tittle">Science Class for You</tittle>
+        <link rel="stylesheet" type="text/css" href="sc class.css">
+    </head>
+    <body>
+        <body background="web back.jpg"></body>
+        <marquee class="mar">Welcome To Science Class</marquee>
+        <font size="5" color="blue">Science Class For You</font>
+        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+        <a href="" class="link">Contact US</a>
+        &nbsp; &nbsp;
+        <a href="https://bbssolutet.blogspot.com/2023/12/forms.html" class="link">Forms</a>
+        &nbsp; &nbsp;
+        <a href="https://bbssolutet.blogspot.com/2023/12/apps.html" class="link">Apps</a>
+        &nbsp; &nbsp;
+        <a href="https://bbssolutet.blogspot.com/2023/10/notice.html" class="link">Notice</a>
+        &nbsp; &nbsp;
+        <a href="https://bbssolutet.blogspot.com/2023/12/games.html" class="link">Games</a>
+        &nbsp; &nbsp;
+        <a href="https://bbssolutet.blogspot.com/2023/12/videos.html" class="link">Videos</a>
+        &nbsp; &nbsp;
+    </h3>
+    <hr size="2px" width="100%" color="blue" noshade></hr>
+    <br /><br />
+
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details Form</title>
+
+    <h1>Student Details</h1>
+    <form id="studentForm">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" required>
+
+        <label for="schoolName">School Name:</label>
+        <input type="text" id="schoolName" name="schoolName" required>
+
+        <label for="class">Class:</label>
+        <input type="text" id="class" name="class" required>
+
+        <label for="rollNumber">Roll Number:</label>
+        <input type="text" id="rollNumber" name="rollNumber" required>
+
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" required>
+
+        <button type="button" onclick="saveStudentDetails()">Save</button>
+    </form>
+
+    <div id="savedDetails">
+        <h2>Saved Details:</h2>
+        <ul id="detailsList">
+            <!-- Saved details will be displayed here -->
+        </ul>
+    </div>
+
+    <script>
+        function saveStudentDetails() {
+            const studentName = document.getElementById('studentName').value;
+            const schoolName = document.getElementById('schoolName').value;
+            const classValue = document.getElementById('class').value;
+            const rollNumber = document.getElementById('rollNumber').value;
+            const mobileNumber = document.getElementById('mobileNumber').value;
+
+            // Validate input
+            if (studentName && schoolName && classValue && rollNumber && mobileNumber) {
+                const studentDetails = `${studentName} - ${schoolName} - ${classValue} - ${rollNumber} - ${mobileNumber}`;
+                const detailsList = document.getElementById('detailsList');
+                const listItem = document.createElement('li');
+                listItem.textContent = studentDetails;
+                detailsList.appendChild(listItem);
+
+                // Clear input fields
+                document.getElementById('studentName').value = '';
+                document.getElementById('schoolName').value = '';
+                document.getElementById('class').value = '';
+                document.getElementById('rollNumber').value = '';
+                document.getElementById('mobileNumber').value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>
